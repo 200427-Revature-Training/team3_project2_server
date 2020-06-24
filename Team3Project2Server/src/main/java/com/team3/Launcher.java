@@ -36,6 +36,13 @@ import java.util.Date;
  * @author JJ
  */
 public class Launcher {
+<<<<<<< HEAD
+    public static void main( String[] args) {
+    	System.out.println("start");
+		
+		
+	}
+=======
 
     private static SessionFactory sf;
 
@@ -110,4 +117,5 @@ public class Launcher {
 
         }
     }
+>>>>>>> 776d518002ce2507f4e803925836c929e958851b
 }
