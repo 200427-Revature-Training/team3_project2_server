@@ -29,16 +29,16 @@ public class User {
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(name="email")
+	@Column(name="email",nullable=false)
 	private String email;
 	
-	@Column(name="password")
+	@Column(name="password",nullable=false)
 	private String password;
 	
-	@Column(name="firstName")
+	@Column(name="firstName",nullable=false)
 	private String firstName;
 	
-	@Column(name="lastName")
+	@Column(name="lastName",nullable=false)
 	private String lastName;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
