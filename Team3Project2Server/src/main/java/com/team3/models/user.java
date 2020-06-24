@@ -11,7 +11,21 @@ import java.time.LocalDate;
  *
  * @author JJ
  */
+
+
 public class user {
+    
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    
      public user(int id, String username, String password, String firstName, String lastName, String email,int role) {
 		super();
 		
