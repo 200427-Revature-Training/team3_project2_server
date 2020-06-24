@@ -5,6 +5,7 @@
  */
 package com.team3.models;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -19,16 +20,13 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Check;
 import java.time.LocalDate;
 import java.util.List;
-import com.team3.models.user;
-import java.util.Date;
-
 /**
  *
  * @author JJ
  */
 @Entity
 @Table(name = "movement")
-public class movement {
+public class Movement {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -132,7 +130,7 @@ public class movement {
     }
         
         
-    public movement(int id, int goal, Date start, String desc, int author, int status, int type) {
+    public Movement(int id, int goal, Date start, String desc, int author, int status, int type) {
         super();
         this.id = id;
         this.goal = goal; 
@@ -144,7 +142,7 @@ public class movement {
 
     }
 
-    public movement() {
+    public Movement() {
         super();
         // TODO Auto-generated constructor stub
     }
