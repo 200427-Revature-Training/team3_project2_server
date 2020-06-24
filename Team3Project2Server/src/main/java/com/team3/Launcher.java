@@ -74,7 +74,7 @@ public class Launcher {
         SessionFactory sessionFactory = configuration.buildSessionFactory(serviceRegistry);
         return sessionFactory;
     }
-
+    
     static void randomMethod() {
         //Note: add user table and make movement model take from that table
         MovementDao moveD = new MovementDao();
@@ -86,9 +86,9 @@ public class Launcher {
         UserRoleDao userRoleDao = new UserRoleDao();
         UserDao userD = new UserDao();
 
-        //Run these two lines once to create the values for userRoles
+        ///Run these two lines once to create the values for userRoles
         //userRoleDao.insertUserRole(new UserRole(0, "admin"));
-        // userRoleDao.insertUserRole(new UserRole(0, "user"));
+        //userRoleDao.insertUserRole(new UserRole(0, "user"));
         
         User newUser = new User(0, "email@email", "pass", "myFname", "myLname", userRoleDao.getUserRoleById(1));
         userD.createUser(newUser);
@@ -97,7 +97,8 @@ public class Launcher {
     }
 
     public static void main(String[] args) {
-
+    	System.out.println("app started ...");
+      
         sf = configureHibernate();
         try {
 
