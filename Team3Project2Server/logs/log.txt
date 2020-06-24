@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-2020-06-24 00:36:26 WARN  LauncherServer:63 - 
-2020-06-24 00:36:53 WARN  LauncherServer:63 - 
-2020-06-24 00:42:28 WARN  LauncherServer:63 - 
-=======
 2020-06-23 12:03:38 WARN  DriverManagerConnectionProviderImpl:73 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
 2020-06-23 22:51:33 WARN  DriverManagerConnectionProviderImpl:73 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
 2020-06-23 22:51:37 WARN  ExceptionHandlerLoggedImpl:27 - GenerationTarget encountered exception accepting command : Error executing DDL "create table movement (id  serial not null, mov_approver int4, mov_author int4 not null, mov_desc varchar(255), mov_expire timestamp, mov_goal int4 not null, mov_start timestamp not null, mov_status int4 not null, mov_type int4 not null, primary key (id), check (char_length(location) > 0))" via JDBC Statement
@@ -99,8 +94,10 @@ Caused by: org.postgresql.util.PSQLException: ERROR: column "location" does not 
 	... 13 more
 2020-06-23 22:58:07 WARN  DriverManagerConnectionProviderImpl:73 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
 2020-06-23 22:58:51 WARN  DriverManagerConnectionProviderImpl:73 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
-<<<<<<< HEAD
->>>>>>> 776d518002ce2507f4e803925836c929e958851b
-=======
 2020-06-24 14:50:38 WARN  DriverManagerConnectionProviderImpl:73 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
->>>>>>> 2d5260df14038d054ee777dd8fe76bb4909ee93e
+2020-06-24 14:07:45 WARN  DriverManagerConnectionProviderImpl:73 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-06-24 14:08:25 WARN  DriverManagerConnectionProviderImpl:73 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-06-24 14:11:52 WARN  DriverManagerConnectionProviderImpl:73 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-06-24 14:11:54 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 42501
+2020-06-24 14:11:54 ERROR SqlExceptionHelper:142 - ERROR: permission denied for table movement
+2020-06-24 14:13:15 WARN  DriverManagerConnectionProviderImpl:73 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
