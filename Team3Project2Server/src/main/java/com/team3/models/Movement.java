@@ -7,7 +7,6 @@ package com.team3.models;
 
 import java.time.LocalDate;
 import java.util.List;
-import com.team3.models.user;
 /**
  *
  * @author JJ
@@ -15,13 +14,13 @@ import com.team3.models.user;
 
 
 
-public class movement {
-    public movement(int id, String goal, LocalDate start, LocalDate expire, String desc, user author, user approver, int status, int type) {
+public class Movement {
+    public Movement(int id, String goal, LocalDate start, LocalDate expire, String desc, User author, User approver, int status, int type) {
 		super();
 		
 	}
 
-	public movement() {
+	public Movement() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
