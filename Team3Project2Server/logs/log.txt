@@ -99,4 +99,8 @@ Caused by: org.postgresql.util.PSQLException: ERROR: column "location" does not 
 	... 13 more
 2020-06-23 22:58:07 WARN  DriverManagerConnectionProviderImpl:73 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
 2020-06-23 22:58:51 WARN  DriverManagerConnectionProviderImpl:73 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+<<<<<<< HEAD
 >>>>>>> 776d518002ce2507f4e803925836c929e958851b
+=======
+2020-06-24 14:50:38 WARN  DriverManagerConnectionProviderImpl:73 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+>>>>>>> 2d5260df14038d054ee777dd8fe76bb4909ee93e
