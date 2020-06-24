@@ -11,12 +11,20 @@
 			</arguments>
 		</buildCommand>
 		<buildCommand>
+<<<<<<< HEAD
 			<name>org.hibernate.eclipse.console.hibernateBuilder</name>
+=======
+			<name>org.eclipse.m2e.core.maven2Builder</name>
+>>>>>>> 776d518002ce2507f4e803925836c929e958851b
 			<arguments>
 			</arguments>
 		</buildCommand>
 		<buildCommand>
+<<<<<<< HEAD
 			<name>org.eclipse.m2e.core.maven2Builder</name>
+=======
+			<name>org.hibernate.eclipse.console.hibernateBuilder</name>
+>>>>>>> 776d518002ce2507f4e803925836c929e958851b
 			<arguments>
 			</arguments>
 		</buildCommand>
