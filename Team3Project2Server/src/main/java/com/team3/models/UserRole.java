@@ -21,10 +21,10 @@ public class UserRole {
 	private int id;
 	
 	@OneToMany(cascade = CascadeType.PERSIST)
-	@JoinColumn(name = "userRoleId")
+	@JoinColumn(name = "user_Role_Id")
         private List<User> users;
         
-        @Column(name="userRole",nullable = false)
+        @Column(name="user_Role")
 	private String userRole;
 	
 	public UserRole() {

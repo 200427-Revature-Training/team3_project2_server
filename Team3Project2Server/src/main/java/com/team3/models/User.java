@@ -29,20 +29,20 @@ public class User {
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(name="email",nullable=false)
+	@Column(name="email")
 	private String email;
 	
-	@Column(name="password",nullable=false)
+	@Column(name="password")
 	private String password;
 	
-	@Column(name="firstName",nullable=false)
+	@Column(name="first_Name")
 	private String firstName;
 	
-	@Column(name="lastName",nullable=false)
+	@Column(name="last_Name")
 	private String lastName;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name="userRoleId", nullable=false)
+	@JoinColumn(name="user_Role_Id")
 	private  UserRole role;
 	
 	public User() {
