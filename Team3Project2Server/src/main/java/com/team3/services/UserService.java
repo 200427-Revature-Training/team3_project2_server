@@ -13,7 +13,21 @@ public class UserService {
 	
 	@Autowired
 	UserRepository userRepository;
-
+	
+	public User deleteUser(User user) {
+		if(user.getId() == 0) {
+			throw new HttpClientErrorException(HttpStatus.NOT_FOUND);
+		}
+		return userRepository.deleteUser(user);		 	
+	}
+	
+	public User updateUser(User user) {
+		if(user.getId() == 0) {
+			throw new HttpClientErrorException(HttpStatus.BAD_REQUEST); 
+		}
+		return saveUser(user);
+	}
+	
 	public User saveUser(User user) {
 		return userRepository.saveUser(user);
 	}

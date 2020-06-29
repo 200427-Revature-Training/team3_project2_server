@@ -18,6 +18,13 @@ public class UserRepository {
 	@Autowired
 	EntityManager em;
 	
+	@Transactional(propagation = Propagation.MANDATORY)
+	public User deleteUser(User user) {
+		Session session = em.unwrap(Session.class);
+		session.delete(user);
+		return user;
+	}
+	
 	@Transactional(propagation = Propagation.REQUIRED)
 	public User saveUser(User user) {
 		Session session = em.unwrap(Session.class);
