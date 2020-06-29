@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="src" path="Team3Project2Client/src/main/java"/>
-	<classpathentry excluding="src/main/java/com/team3/" kind="src" path="Team3Project2Server"/>
-	<classpathentry excluding="Team3Project2Client/src/main/java/|Team3Project2Server/|Team3Project2Server/src/main/java/com/team3/" kind="src" path=""/>
-	<classpathentry kind="src" path="Team3Project2Server/src/main/java/com/team3"/>
-	<classpathentry kind="output" path="bin"/>
-</classpath>
