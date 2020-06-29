@@ -15,9 +15,36 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 8b15759cf6516233291cc7a8535faee4b8b1ca69
+		<buildCommand>
+			<name>org.hibernate.eclipse.console.hibernateBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.springframework.ide.eclipse.boot.validation.springbootbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+<<<<<<< HEAD
+>>>>>>> 8b15759cf6516233291cc7a8535faee4b8b1ca69
+=======
+>>>>>>> 8b15759cf6516233291cc7a8535faee4b8b1ca69
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+		<nature>org.hibernate.eclipse.console.hibernateNature</nature>
+>>>>>>> 8b15759cf6516233291cc7a8535faee4b8b1ca69
+=======
+		<nature>org.hibernate.eclipse.console.hibernateNature</nature>
+>>>>>>> 8b15759cf6516233291cc7a8535faee4b8b1ca69
 	</natures>
 </projectDescription>
