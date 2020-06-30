@@ -20,6 +20,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Check;
 import java.time.LocalDate;
 import java.util.List;
+
 /**
  *
  * @author JJ
@@ -87,24 +88,23 @@ public class Movement {
     public void setExpire(Date expire) {
         this.expire = expire;
     }
-    
-    
+
     public String getDescription() {
-		return desc;
-	}
+        return desc;
+    }
 
-	public void setDescription(String desc) {
-		this.desc = desc;
-	}
+    public void setDescription(String desc) {
+        this.desc = desc;
+    }
 
-        public int getAuthor() {
+    public int getAuthor() {
         return author;
     }
 
     public void setAuthor(int author) {
         this.author = author;
     }
-    
+
     public int getApprover() {
         return approver;
     }
@@ -112,7 +112,7 @@ public class Movement {
     public void setApprover(int approver) {
         this.approver = approver;
     }
-    
+
     public int getStatus() {
         return status;
     }
@@ -120,7 +120,7 @@ public class Movement {
     public void setStatus(int status) {
         this.status = status;
     }
-    
+
     public int getType() {
         return type;
     }
@@ -128,19 +128,24 @@ public class Movement {
     public void setType(int type) {
         this.type = type;
     }
-        
-        
+
     public Movement(int id, int goal, Date start, String desc, int author, int status, int type) {
         super();
         this.id = id;
-        this.goal = goal; 
-        this.start = start;
+        this.goal = goal;
+        if (start == null) {
+            this.start = new Date();
+        } else {
+            this.start = start;
+        }
         this.desc = desc;
-        this.author = author;        
+        this.author = author;
         this.status = status;
         this.type = type;
 
     }
+
+
 
     public Movement() {
         super();

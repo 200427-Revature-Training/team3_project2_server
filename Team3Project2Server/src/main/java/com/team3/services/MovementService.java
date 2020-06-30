@@ -14,12 +14,12 @@ public class MovementService {
 	@Autowired
 	MovementRepository movementRepository; 
 	
-	/*
+	
 	public Movement getMovementById(int id) {
 		return movementRepository.getMovementById(id)
 				.orElseThrow(() -> new HttpClientErrorException(HttpStatus.NOT_FOUND));
 	}
-	*/
+	
 
 	public Movement saveMovement(Movement movement) {
 		return movementRepository.saveMovement(movement);
