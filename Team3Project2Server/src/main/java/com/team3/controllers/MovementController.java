@@ -18,13 +18,13 @@ public class MovementController {
 	@Autowired
 	MovementService movementService; 
 	
-	/*
+	
 	// get movement by Id
 	@GetMapping("/{id}")
 	public Movement getUserById(@PathVariable int id) {
 		return movementService.getMovementById(id);
 	}
-	*/
+	
 	
 	/* save movement*/
 	@PostMapping

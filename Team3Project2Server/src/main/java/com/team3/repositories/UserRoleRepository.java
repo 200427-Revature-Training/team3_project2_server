@@ -28,4 +28,6 @@ public class UserRoleRepository {
 		UserRole ur = session.get(UserRole.class, id);
 		return Optional.ofNullable(ur);
 	}
+        
+        
 }
