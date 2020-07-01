@@ -9,6 +9,7 @@ import org.hibernate.service.ServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import com.team3.daos.UserDao;
 import com.team3.models.Movement;
+import com.team3.models.MovementType;
 import com.team3.models.User;
 import com.team3.models.UserRole;
 
@@ -41,7 +42,8 @@ public class LauncherServer {
                 .setProperty("hibernate.connection.password", System.getenv("NODE_APP_PASS"))
                 .addAnnotatedClass(Movement.class)
                 .addAnnotatedClass(User.class)
-                .addAnnotatedClass(UserRole.class);
+                .addAnnotatedClass(UserRole.class)
+                .addAnnotatedClass(MovementType.class);
 
         // Use configuration to create serviceRegistry
         ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
