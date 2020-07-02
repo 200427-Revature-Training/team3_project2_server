@@ -22,8 +22,13 @@ public class MovementService {
 				.orElseThrow(() -> new HttpClientErrorException(HttpStatus.NOT_FOUND));
 	}
         
-      
+      public List<Movement> getMovementsByStatus(int id) {
+		return movementRepository.getMovementsByStatus(id);
+	}
         
+      public List<Movement> getMovementsByType(int id) {
+		return movementRepository.getMovementsByType(id);
+	}
 	public List< Movement> getMovements() {
 		return movementRepository.getMovements();
 	}

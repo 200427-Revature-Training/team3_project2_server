@@ -11,9 +11,15 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.team3.models.Movement;
+import com.team3.models.MovementStatus;
+import com.team3.models.MovementType;
 import java.util.List;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.ParameterExpression;
+import javax.persistence.criteria.Root;
+import org.hibernate.Criteria;
+import org.hibernate.query.Query;
 
 @Repository
 public class MovementRepository {
@@ -45,4 +51,22 @@ public class MovementRepository {
 
     }
 
+    public List<Movement> getMovementsByStatus(int id) {
+        Session session = em.unwrap(Session.class);
+        String hql = "FROM Movement p WHERE p.status = :status";
+        Query query = session.createQuery(hql, Movement.class);
+        query.setParameter("status", new MovementStatus(id));
+        List<Movement> m = query.list();
+       
+        return m;
+    }
+    public List<Movement> getMovementsByType(int id) {
+        Session session = em.unwrap(Session.class);
+        String hql = "FROM Movement p WHERE p.type = :type";
+        Query query = session.createQuery(hql, Movement.class);
+        query.setParameter("type", new MovementType(id));
+        List<Movement> m = query.list();
+       
+        return m;
+    }
 }

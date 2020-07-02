@@ -47,6 +47,7 @@ public class Movement {
     @Column(name = "mov_desc")
     private String desc;
 
+    
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(nullable = false, name = "mov_author")
     private User author;
@@ -109,12 +110,18 @@ public class Movement {
         this.desc = desc;
     }
 
-    public int getAuthor() {
+    public Integer getAuthor() {
         return author.getId();
     }
 
-    public void setAuthor(int author) {
-        this.author.setId(author);
+    public void setAuthor(Integer author) {
+         if (null != author) {
+            this.author.setId(author);
+
+        } else {
+            this.author.setId(0);
+
+        }
     }
 
     public Integer getApprover() {
@@ -136,19 +143,19 @@ public class Movement {
         }
     }
 
-    public int getStatus() {
+    public Integer getStatus() {
         return status.getId();
     }
 
-    public void setStatus(int status) {
+    public void setStatus(Integer status) {
         this.status.setId(status);
     }
 
-    public int getType() {
+    public Integer getType() {
         return type.getId();
     }
 
-    public void setType(int type) {
+    public void setType(Integer type) {
         this.type.setId(type);
     }
 
@@ -168,7 +175,7 @@ public class Movement {
         this.image = image;
     }
 
-    public Movement(int id, int goal, int current, Date start, String desc, int author, int status, int type, String image) {
+    public Movement(int id, int goal, int current, Date start, String desc, Integer author, Integer status, Integer type, String image) {
         super();
         this.id = id;
         this.goal = goal;
@@ -185,6 +192,7 @@ public class Movement {
         this.type = new MovementType(type);
         this.image = image;
     }
+   
 
     public Movement() {
         super();

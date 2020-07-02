@@ -22,5 +22,8 @@ public class MovementStatusService {
 		return movementStatusRepository.getMovementStatusById(id)
 				.orElseThrow(() -> new HttpClientErrorException(HttpStatus.NOT_FOUND));
 	}
-	
+	public MovementStatus getMovementStatusByName(String name) {
+		return movementStatusRepository.getMovementStatusByName(name)
+				.orElseThrow(() -> new HttpClientErrorException(HttpStatus.NOT_FOUND));
+	}
 }
