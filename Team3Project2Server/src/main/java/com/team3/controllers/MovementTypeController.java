@@ -27,4 +27,9 @@ public class MovementTypeController {
 	public MovementType getMovementTypeById(@PathVariable int id) {
 		return movementTypeService.getMovementTypeById(id);
 	}
+        
+         @GetMapping("/name/{stat}")
+    public MovementType getMovementTypeByName(@PathVariable String stat) {
+        return movementTypeService.getMovementTypeByName(stat);
+    }
 }

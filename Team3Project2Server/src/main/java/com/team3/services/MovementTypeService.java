@@ -1,5 +1,6 @@
 package com.team3.services;
 
+import com.team3.models.MovementStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,10 @@ public class MovementTypeService {
 	
 	public MovementType getMovementTypeById(int id) {
 		return movementTypeRepository.getMovementTypeById(id)
+				.orElseThrow(() -> new HttpClientErrorException(HttpStatus.NOT_FOUND));
+	}
+        public MovementType getMovementTypeByName(String name) {
+		return movementTypeRepository.getMovementTypeByName(name)
 				.orElseThrow(() -> new HttpClientErrorException(HttpStatus.NOT_FOUND));
 	}
 }

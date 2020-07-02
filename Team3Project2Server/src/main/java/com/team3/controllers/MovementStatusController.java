@@ -14,20 +14,25 @@ import com.team3.services.MovementStatusService;
 @RestController
 @RequestMapping("/movementStatus")
 public class MovementStatusController {
-	
-	@Autowired
-	MovementStatusService movementStatusService;
-	/*
+
+    @Autowired
+    MovementStatusService movementStatusService;
+
+    /*
 	// POST  a new movement status
 	@PostMapping
 	public MovementStatus insertMovementStatus(@RequestBody MovementStatus movementStatus) {
 		return movementStatusService.insertMovementStatus(movementStatus);
 	}
-	*/
-	// GET movement status by ID
-	@GetMapping("/{id}")
-	public MovementStatus getMovementStatusById(@PathVariable int id) {
-		return movementStatusService.getMovementStatusById(id);
-	}
+     */
+    // GET movement status by ID
+    @GetMapping("/{id}")
+    public MovementStatus getMovementStatusById(@PathVariable int id) {
+        return movementStatusService.getMovementStatusById(id);
+    }
 
+    @GetMapping("/name/{stat}")
+    public MovementStatus getMovementStatusByName(@PathVariable String stat) {
+        return movementStatusService.getMovementStatusByName(stat);
+    }
 }
