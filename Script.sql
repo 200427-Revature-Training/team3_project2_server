@@ -79,7 +79,33 @@ VALUES(10, 'Test3', 1000, './images/flood.jpg', '2020-06-29T18:25:43.511+0000', 
  * Get http://localhost:80/movement/type/Educational
  * Get http://localhost:80/movementStatus/name/Pending
  * 
+ * Post http://localhost:80/movement
+ * {
+    "id": 0,
+        "goal": 100,
+        "current": 10,
+        "start": "2020-06-29T22:25:43.511+0000",
+        "description": "Test",
+        "author": 1,
+         "status": 3,
+        "type": 2,
+        "image": "./images/flood.jpg",
+        "expire": null,        
+        "approver": null
+       
+        
+        
+}
+ *
+ * Post http://localhost:80/user
+ * {
+    "id": 0,
+    "email": "guy@guy2.com",
+    "password": "12345",
+    "firstName": "2fsdfddf",
+    "lastName": "2dsfdfsfd",
+    "userRoleId": 1
+}
  * 
- * 
- *  */
+ *   */
 

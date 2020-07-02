@@ -110,53 +110,47 @@ public class Movement {
         this.desc = desc;
     }
 
-    public Integer getAuthor() {
-        return author.getId();
+    public User getAuthor() {
+        return author;
     }
 
-    public void setAuthor(Integer author) {
-         if (null != author) {
-            this.author.setId(author);
+    public void setAuthor(User author) {
+        
+            this.author= author;
 
-        } else {
-            this.author.setId(0);
-
-        }
+       
     }
 
-    public Integer getApprover() {
+    public User getApprover() {
         if(approver == null){
-            return 0;
+            return new User(0);
         }
         else{
-                    return approver.getId();            
+                    return approver;            
         }
     }
 
-    public void setApprover(Integer approver) {
-        if (null != approver) {
-            this.approver.setId(approver);
+    public void setApprover(User approver) {
+       
+            this.approver=approver;
 
-        } else {
-            this.approver.setId(0);
-
-        }
+        
     }
 
-    public Integer getStatus() {
-        return status.getId();
+    public MovementStatus getStatus() {
+        return status;
     }
 
-    public void setStatus(Integer status) {
-        this.status.setId(status);
+    public void setStatus(MovementStatus status) {
+        this.status= status;
     }
 
-    public Integer getType() {
-        return type.getId();
+    public MovementType getType() {
+        return type;
     }
 
-    public void setType(Integer type) {
-        this.type.setId(type);
+    public void setType(MovementType type) {
+        this.type= type;
     }
 
     public int getCurrent() {
