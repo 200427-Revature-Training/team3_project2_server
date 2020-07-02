@@ -5,6 +5,7 @@
  */
 package com.team3.models;
 
+import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,6 +15,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -27,8 +29,16 @@ public class User {
 	
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 	
+        @OneToMany(cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "mov_author")
+        private List<Movement> movementsauth;
+        
+         @OneToMany(cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "mov_approver")
+        private List<Movement> movementsapp;
+        
 	@Column(name="email")
 	private String email;
 	
@@ -50,27 +60,32 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(int id, String email, String password, String firstName, String lastName, UserRole role) {
+	public User(Integer id, String email, String password, String firstName, String lastName, int role) {
 		super();
 		this.id = id;
 		this.email = email;
 		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.role = role;
+		this.role = new UserRole(role);
+	}
+        public User(Integer id) {
+		super();
+		this.id = id;
+		
 	}
 
 	/**
 	 * @return the id
 	 */
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -150,7 +165,6 @@ public class User {
 		int result = 1;
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
-		result = prime * result + id;
 		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		return result;

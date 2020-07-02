@@ -83,6 +83,10 @@ public class MovementType {
 		this.id = id;
 		this.movementType = movementType;
 	}
+        public MovementType(int id) {
+		super();
+		this.id = id;
+	}
 	
 	public MovementType() {
 		super();

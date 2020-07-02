@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.team3.models.MovementType;
 import com.team3.services.MovementTypeService;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping("/movementType")
@@ -15,14 +17,14 @@ public class MovementTypeController {
 
 	@Autowired
 	MovementTypeService movementTypeService;
-	
+	/*
 	@PostMapping
-	public MovementType insertMovementType(MovementType movementType) {
+	public MovementType insertMovementType( @RequestBody MovementType movementType) {
 		return movementTypeService.insertMovementType(movementType);
 	}
-	
+	*/
 	@GetMapping("/{id}")
-	public MovementType getMovementTypeById(int id) {
+	public MovementType getMovementTypeById(@PathVariable int id) {
 		return movementTypeService.getMovementTypeById(id);
 	}
 }
