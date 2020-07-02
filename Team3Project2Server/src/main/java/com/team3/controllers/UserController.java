@@ -28,7 +28,7 @@ public class UserController {
 		
 		// UPDATE current user
 		@PutMapping
-		public User updateSport(@RequestBody User user) {
+		public User updateUser(@RequestBody User user) {
 			return userService.updateUser(user);
 		}
 

@@ -7,6 +7,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -17,7 +18,7 @@ import javax.persistence.Table;
 @Table(name = "userrole_table")
 public class UserRole {
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	@OneToMany(cascade = CascadeType.PERSIST)
@@ -36,6 +37,10 @@ public class UserRole {
 		super();
 		this.id = id;
 		this.userRole = userRole;
+	}
+        public UserRole(int id) {
+		super();
+		this.id = id;
 	}
 
 	/**

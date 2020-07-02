@@ -20,6 +20,8 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Check;
 import java.time.LocalDate;
 import java.util.List;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -45,17 +47,27 @@ public class Movement {
     @Column(name = "mov_desc")
     private String desc;
 
-    @Column(nullable = false, name = "mov_author")
-    private int author;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(nullable = false, name = "mov_author")
+    private User author;
 
-    @Column(name = "mov_approver")
-    private int approver;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "mov_approver")
+    private User approver;
 
-    @Column(nullable = false, name = "mov_status")
-    private int status;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "movement_status_id")
+    private MovementStatus status;
 
-    @Column(nullable = false, name = "mov_type")
-    private int type;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "movement_type_id")
+    private MovementType type;
+
+    @Column(name = "mov_current")
+    private int current;
+
+    @Column(name = "mov_image")
+    private String image;
 
     public int getId() {
         return id;
@@ -98,54 +110,81 @@ public class Movement {
     }
 
     public int getAuthor() {
-        return author;
+        return author.getId();
     }
 
     public void setAuthor(int author) {
-        this.author = author;
+        this.author.setId(author);
     }
 
-    public int getApprover() {
-        return approver;
+    public Integer getApprover() {
+        if(approver == null){
+            return 0;
+        }
+        else{
+                    return approver.getId();            
+        }
     }
 
-    public void setApprover(int approver) {
-        this.approver = approver;
+    public void setApprover(Integer approver) {
+        if (null != approver) {
+            this.approver.setId(approver);
+
+        } else {
+            this.approver.setId(0);
+
+        }
     }
 
     public int getStatus() {
-        return status;
+        return status.getId();
     }
 
     public void setStatus(int status) {
-        this.status = status;
+        this.status.setId(status);
     }
 
     public int getType() {
-        return type;
+        return type.getId();
     }
 
     public void setType(int type) {
-        this.type = type;
+        this.type.setId(type);
     }
 
-    public Movement(int id, int goal, Date start, String desc, int author, int status, int type) {
+    public int getCurrent() {
+        return current;
+    }
+
+    public void setCurrent(int current) {
+        this.current = current;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setType(String image) {
+        this.image = image;
+    }
+
+    public Movement(int id, int goal, int current, Date start, String desc, int author, int status, int type, String image) {
         super();
         this.id = id;
         this.goal = goal;
+        this.current = current;
         if (start == null) {
             this.start = new Date();
         } else {
             this.start = start;
         }
+
         this.desc = desc;
-        this.author = author;
-        this.status = status;
-        this.type = type;
-
+        this.author.setId(author);
+        this.status = new MovementStatus(status);
+        this.type = new MovementType(type);
+        this.image = image;
     }
-
-
 
     public Movement() {
         super();

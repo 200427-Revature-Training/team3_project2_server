@@ -93,6 +93,11 @@ public class MovementStatus {
 		this.id = id;
 		this.movementStatus = movementStatus;
 	}
+        public MovementStatus(int id) {
+		super();
+		this.id = id;
+		
+	}
 
 	/**
 	 * Generated super

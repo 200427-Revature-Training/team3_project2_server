@@ -7,6 +7,8 @@ import org.springframework.web.client.HttpClientErrorException;
 
 import com.team3.models.Movement;
 import com.team3.repositories.MovementRepository;
+import java.util.List;
+
 
 @Service
 public class MovementService {
@@ -19,10 +21,22 @@ public class MovementService {
 		return movementRepository.getMovementById(id)
 				.orElseThrow(() -> new HttpClientErrorException(HttpStatus.NOT_FOUND));
 	}
-	
+        
+      
+        
+	public List< Movement> getMovements() {
+		return movementRepository.getMovements();
+	}
 
 	public Movement saveMovement(Movement movement) {
 		return movementRepository.saveMovement(movement);
+	}
+        
+        public Movement updateMovement(Movement movement) {
+		if(movement.getId() == 0) {
+			throw new HttpClientErrorException(HttpStatus.BAD_REQUEST); 
+		}
+		return saveMovement(movement);
 	}
 	
 }
