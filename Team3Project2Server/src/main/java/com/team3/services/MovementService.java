@@ -41,7 +41,7 @@ public class MovementService {
 		if(movement.getId() == 0) {
 			throw new HttpClientErrorException(HttpStatus.BAD_REQUEST); 
 		}
-		return saveMovement(movement);
+		return movementRepository.updateMovement(movement);
 	}
 	
 }
