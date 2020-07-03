@@ -54,6 +54,8 @@ public class User {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="user_Role_Id")
 	private  UserRole role;
+        
+        
 	
 	public User() {
 		super();
@@ -148,16 +150,20 @@ public class User {
 	/**
 	 * @return the userRoleId
 	 */
-	public int getUserRoleId() {
-		return role.getId();
+	public UserRole getUserRoleId() {
+		return role;
 	}
 
 	/**
 	 * @param userRoleId the userRoleId to set
 	 */
-	public void setUserRoleId(int userRoleId) {
-		this.role.setId(userRoleId);
+	public void setUserRoleId(UserRole userRoleId) {
+            
+		this.role = userRoleId;
 	}
+        
+       
+
 
 	@Override
 	public int hashCode() {
