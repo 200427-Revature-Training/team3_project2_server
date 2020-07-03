@@ -31,6 +31,15 @@ public class MovementRepository {
     public Movement saveMovement(Movement movement) {
         Session session = em.unwrap(Session.class);
         session.save(movement);
+        
+        return movement;
+    }
+    
+    @Transactional(propagation = Propagation.REQUIRED)
+    public Movement updateMovement(Movement movement) {
+        Session session = em.unwrap(Session.class);
+        session.update(movement);
+        
         return movement;
     }
 
