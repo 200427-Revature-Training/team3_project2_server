@@ -62,6 +62,18 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 
+		
+	//constructor for creating a user on signup
+	public User(String email, String password, String firstName, String lastName, UserRole role) {
+		super();
+		this.email = email;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.role = role;
+	}
+
+
 	public User(Integer id, String email, String password, String firstName, String lastName, int role) {
 		super();
 		this.id = id;
