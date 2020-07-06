@@ -73,6 +73,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.permitAll()
 			.antMatchers(HttpMethod.PUT, "/movement")
 				.permitAll()
+			.antMatchers(HttpMethod.POST, "/movement")
+				.permitAll()
 			.anyRequest()
 				.authenticated();
 		
