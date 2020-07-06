@@ -26,6 +26,10 @@ public class MovementService {
 		return movementRepository.getMovementsByStatus(id);
 	}
         
+      
+      public List<Movement> getMovementsByUser(int id) {
+		return movementRepository.getMovementsByUser(id);
+	}
       public List<Movement> getMovementsByType(int id) {
 		return movementRepository.getMovementsByType(id);
 	}

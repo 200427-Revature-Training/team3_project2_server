@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.team3.models.Movement;
 import com.team3.models.MovementStatus;
 import com.team3.models.MovementType;
+import com.team3.models.User;
 import java.util.List;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -65,6 +66,16 @@ public class MovementRepository {
         String hql = "FROM Movement p WHERE p.status = :status";
         Query query = session.createQuery(hql, Movement.class);
         query.setParameter("status", new MovementStatus(id));
+        List<Movement> m = query.list();
+       
+        return m;
+    }
+    
+    public List<Movement> getMovementsByUser(int id) {
+        Session session = em.unwrap(Session.class);
+        String hql = "FROM Movement p WHERE p.author = :author";
+        Query query = session.createQuery(hql, Movement.class);
+        query.setParameter("author", new User(id));
         List<Movement> m = query.list();
        
         return m;
