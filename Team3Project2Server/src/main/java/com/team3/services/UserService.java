@@ -36,5 +36,10 @@ public class UserService {
 		return userRepository.getUserById(id)
 				.orElseThrow(() -> new HttpClientErrorException(HttpStatus.NOT_FOUND));
 	}
+	
+	public User getUserByEmail(String email) {
+		return userRepository.getUserByEmail(email)
+				.orElseThrow(() -> new HttpClientErrorException(HttpStatus.NOT_FOUND));
+	}
 }
 

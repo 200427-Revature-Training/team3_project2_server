@@ -9,4 +9,6 @@ spring:  datasource:
     database-platform: org.hibernate.dialect.PostgreSQL95Dialect
     show-sql: true
     hibernate:      ddl-auto: update
-    
+app:
+  jwtSecret: JWTSuperSecretKey
+  jwtExpirationInMs: 604800000

@@ -38,6 +38,10 @@ public class UserRepository {
 		return Optional.ofNullable(user);
 	}
 	
-	
+	public Optional<User> getUserByEmail(String email) {
+		Session session = em.unwrap(Session.class);
+		User user = session.get(User.class, email);
+		return Optional.ofNullable(user);
+	}
 
 }
