@@ -48,6 +48,15 @@ public class MovementController {
         m.toArray(moves);
         return moves;
     }
+    
+    @GetMapping("/user/{u}")
+    public Movement[] getMovementsByUser(@PathVariable int u) {      
+
+        List<Movement> m = movementService.getMovementsByUser(u);
+        Movement[] moves = new Movement[m.size()];
+        m.toArray(moves);
+        return moves;
+    }
 
     @GetMapping("/type/{type}")
     public Movement[] getMovementsByType(@PathVariable String type) {
