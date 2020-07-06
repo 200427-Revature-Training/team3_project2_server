@@ -70,8 +70,8 @@ public class UserController {
 	}
 	
 	// GET user by email
-	@GetMapping//("/{email}")
-	public User getUserByEmail(@RequestParam(value = "email") String email) {
+	@GetMapping("/email/{email}")
+	public User getUserByEmail(@PathVariable String email) {
 		return userService.getUserByEmail(email);
 	}
 	
